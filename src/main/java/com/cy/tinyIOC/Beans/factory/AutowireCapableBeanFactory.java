@@ -6,7 +6,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
     @Override
     protected Object doCreateBean(BeanDefinition beanDefinition) {
         try {
-            //将bean
+            //将bean实例化
             Object bean = beanDefinition.getBeanClass().newInstance();
             return bean;
         } catch (InstantiationException e) {

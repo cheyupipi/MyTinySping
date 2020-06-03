@@ -30,6 +30,7 @@ public class BeanDefinition {
     public void setBeanClassName(String beanClassName) {
         this.beanClassName = beanClassName;
         try {
+            //根据路径动态加载bean
             this.beanClass = Class.forName(beanClassName);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

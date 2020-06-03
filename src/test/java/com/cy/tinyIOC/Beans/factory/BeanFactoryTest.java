@@ -18,11 +18,11 @@ public class BeanFactoryTest {
         // 根据包路径，获取bean
         beanDefinition.setBeanClassName("com.cy.tinyIOC.Beans.HelloWorldService");
 
-        // 将bean的初始化放入BeanFactory中,为了保证扩展性，我们使用Extract Interface的方法，
+        // 将bean初始化放入BeanFactory（容器）中,为了保证扩展性，我们使用Extract Interface的方法，
         // 将`BeanFactory`替换成接口，而使用`AbstractBeanFactory`和`AutowireCapableBeanFactory`作为其实现
         beanFactory.registerBeanDefinition("helloWorldService", beanDefinition);
 
-        // 3.获取bean
+        // 3.从容器种获取bean
         HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");
         helloWorldService.helloWorld();
 
